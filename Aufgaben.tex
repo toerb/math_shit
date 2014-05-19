@@ -10,24 +10,24 @@
 
 \subsection{}
 
-Wieviele Permutationen der Elemente der Menge $\lbrace 1, 2, 3, 4 \rbrace$ gibt es, wenn die Zahl \textit{i} genau \textit{i}-mal auftreten soll (\textit{i} = 1, 2, 3, 4)?
+Wie viele Permutationen der Elemente der Menge $\lbrace 1, 2, 3, 4 \rbrace$ gibt es, wenn die Zahl \textit{i} genau \textit{i}-mal auftreten soll (\textit{i} = 1, 2, 3, 4)?
 \paragraph{Lösung:}
 \begin{equation*}
-\dbinom{10}{4,3,2,1} = 12600\text{ Permutationen}
+\dbinom{10}{4,3,2,1} = \frac{10!}{4!3!2!1!} = 12600\text{ Permutationen}
 \end{equation*}
 \subsection{}
 Man berechne die Anzahl der Diagonalen in einem konvexen \textit{n}-Eck.
 \paragraph{Lösung:}
-Jeder Knoten ist mit $n-1$ anderen Knoten verbunden. Nehmen wir dies für alle an, werden alle Verbindungen doppelt gewählt. Danach müssen noch alle $n$ Aussenkanten abgezogen werden: \[ \frac{n\cdot (n-1)}{2} - n \]
+Jeder Knoten ist mit $n-1$ anderen Knoten verbunden. Nehmen wir dies für alle an, werden alle Verbindungen doppelt gewählt. Danach müssen noch alle $n$ Außenkanten abgezogen werden: \[ \frac{n\cdot (n-1)}{2} - n \]
 \subsection{}
-Es stehen \textit{n} Farben zur Verfügung. Auf wieviele unterscheidbare Arten lässt sich ein aus zwei Quadraten bestehendes Rechteck färben.
+Es stehen \textit{n} Farben zur Verfügung. Auf wie viele unterscheidbare Arten lässt sich ein aus zwei Quadraten bestehendes Rechteck färben.
 \paragraph{Lösung:}
 $n$ Farben, 2 Quadrate, $\tbinom{n}{2}$ Möglichkeiten für unterschiedliche Kombinationen und $n$ Kombinationen für 2 gleichfarbige Quadrate:
 \begin{equation*}
 \dbinom{n}{2} + n =\frac{n!}{2!\cdot (n-2)!} + n = \frac{n\cdot (n-1)}{2} + n = \frac{n(n+1)}{2}
 \end{equation*}
 \subsection{}
-Auf wieviele Arten kann man im quadratischen Straßennetz ohne Umweg von der Straßenecke A zur Straßenecke B gehen? Wie viele Arten bleiben übrig, wenn der Weg über die Straßenecke K führen soll?
+Auf wie viele Arten kann man im quadratischen Straßennetz ohne Umweg von der Straßenecke A zur Straßenecke B gehen? Wie viele Arten bleiben übrig, wenn der Weg über die Straßenecke K führen soll?
 \paragraph{Lösung:}
 Ohne Umwege sind es immer 8 Schritte, vier nach rechts und vier nach oben:
 \begin{equation*}
@@ -39,7 +39,7 @@ Wege über k:
 \end{equation*}
 \subsection{}
 
-In einer Urne liegen vier Kugeln, die mit den Ziffern eins bis vier nummeriert sind. Nacheinander werden 10 Kugeln mit zurücklegen gezogen, die Ziffern notiert und der Größe nach geordnet. Wieviele 10-Tupel dieser Art gibt es?
+In einer Urne liegen vier Kugeln, die mit den Ziffern eins bis vier nummeriert sind. Nacheinander werden 10 Kugeln mit zurücklegen gezogen, die Ziffern notiert und der Größe nach geordnet. Wie viele 10-Tupel dieser Art gibt es?
 \paragraph{Lösung:}
 $k=10, n=4$
 \begin{equation*}
@@ -50,9 +50,9 @@ $k=10, n=4$
 Man betrachte die Menge aller Zahlenfolgen der Länge 3 aus $\lbrace 1, 2, 3, 4 \rbrace$.
 
 \begin{enumerate}
-\item[(a)] Wieviele Zahlenfolgen dieser Art gibt es?
+\item[(a)] Wie viele Zahlenfolgen dieser Art gibt es?
 \item[(b)] Wie groß ist die Anzahl steigender Zahlenfolgen dieser Art?
-\item[(c)] Wieviele Zahlenfolgen bleiben übrig, wenn sie \textit{streng} steigend sein soll?
+\item[(c)] Wie viele Zahlenfolgen bleiben übrig, wenn sie \textit{streng} steigend sein soll?
 \end{enumerate}
 \paragraph{Lösung:}
 \subparagraph{(a)} \begin{center}
@@ -64,9 +64,9 @@ $4^{3} = 64$ Möglichkeiten
 
 Es sei $M = \lbrace 1, 2, 3, 4 \rbrace$.
 \begin{enumerate}
-\item[(a)] Wieviele Funktionen von $M$ in $M$ gibt es?
-\item[(b)] Wieviele Funktionen dieser Art sind injektiv?
-\item[(c)] Wieviele Funktionen von $M$ in $M$ sind steigend?
+\item[(a)] Wie viele Funktionen von $M$ in $M$ gibt es?
+\item[(b)] Wie viele Funktionen dieser Art sind injektiv?
+\item[(c)] Wie viele Funktionen von $M$ in $M$ sind steigend?
 \end{enumerate}
 
 \paragraph{Lösung:}
@@ -85,7 +85,7 @@ Entspricht ziehen ohne Zurücklegen, da kein Element das Bild für 2 Elemente se
 
 \subsection{}
 
-Auf wieviele unterscheidbare Arten lassen sich die Münzen $1, 1, 1, 2, 2, 2$ anordnen?
+Auf wie viele unterscheidbare Arten lassen sich die Münzen $1, 1, 1, 2, 2, 2$ anordnen?
 \paragraph{Lösung:}
 \begin{equation*}
 	\dbinom{6}{3,3} = 20\dfrac{\text{Zähler}}{\text{Nenner}}
@@ -99,7 +99,8 @@ Aus der Menge $\lbrace 000, 001, ..., 999 \rbrace$ wird zufällig ein Element ge
 \subparagraph{(a)}
 Anzahl an Möglichkeiten, dass die Ziffer wenigstens einmal auftritt.
 \[ 3*9^{2} + 3 * 9 + 1 = 271 \]
-Wahrscheinlichkeit\[ \frac{271}{1000} \]
+Wahrscheinlichkeit:
+\[ \frac{271}{1000} \]
 \subparagraph{(b)}
 \[ 3*9 = 27 \]
 
@@ -119,7 +120,7 @@ In einer Urne befinden sich zehn gleichartige Kugeln. Die Kugeln sind nummeriert
 
 Neun Kugeln werden zufällig und unabhängig von einander auf drei Urnen verteilt. Wie groß ist die Wahrscheinlichkeit dafür, dass sich in jeder Urne drei Kugeln befinden?
 \paragraph{Lösung:}
-\[ \frac{\dbinom{9}{3 3 3}}{3^9} = 0,085 \]
+\[ \frac{\dbinom{9}{3,3,3}}{3^9} = 0,085 \]
 
 \subsection{}
 
@@ -149,6 +150,7 @@ P(A) &= 50 \% \qquad P(B) = \frac{7}{16}\\
 P(A\cap B) &= \frac{3}{16}\\
 P(A\cap B) &\neq P(A) \cdot P(B)
 \end{align}
+Das heisst, $A$ und $B$ sind nicht unabhängig.
 
 \subsection{}
 
@@ -189,7 +191,7 @@ Allgemein:
 \subsection{}
 Eine symmetrische Münze wird zehnmal geworfen:
 \begin{enumerate}
-\item[(a)] Man berechne die Wahrscheinlichkeit für $i$ Erfolge ($i = 0,...,10$)
+\item[(a)] Man berechne die Wahrscheinlichkeit für $k$ Erfolge ($k = 0,...,10$)
 \item[(b)] welche Wahrscheinlichkeit hat das Ereignis ''vier, fünf oder sechs Erfolge''
 \end{enumerate}
 \paragraph{Lösung:}
@@ -266,7 +268,7 @@ Betrachte die normalverteilte Zufallsvariable $X$ mit den Parametern $\mu = 6$ u
 \paragraph{Lösung}
 Standardformel:
 \begin{equation}
-P\left(\mu+\sigma\cdot X \leq x\right) = P\left(X \leq \frac{x - \mu}{\sigma}\right) = \phi\left(\frac{x - \mu}{\sigma}\right)
+P_{\mu,\sigma}(X \leq x) = P\left(\mu+\sigma\cdot X \leq x\right) = P\left(X \leq \frac{x - \mu}{\sigma}\right) = \phi\left(\frac{x - \mu}{\sigma}\right)
 \end{equation}
 \subparagraph{(a)}
 \begin{equation}
@@ -296,11 +298,13 @@ P_{\mu,\sigma}&(|X-\mu| < k\sigma) = P_{\mu,\sigma}(-k\sigma <X-\mu < k\sigma) =
 \end{align*}
 
 \subsection{}
-Eine Maschine sellt Metallplatten her. Die Dicke der Metallplatten ist normalverteit mit Erwartungswert $\mu = 8$ und Standardabweichung $\sigma = 0.05$. Man berechne die Wahrscheinlichkeit dafür, dass der Betrag der Abweichung vom Erwartungswert höchstens 0.08 beträgt.
+Eine Maschine stellt Metallplatten her. Die Dicke der Metallplatten ist normalverteit mit Erwartungswert $\mu = 8$ und Standardabweichung $\sigma = 0.05$. Man berechne die Wahrscheinlichkeit dafür, dass der Betrag der Abweichung vom Erwartungswert höchstens 0.08 beträgt.
 \paragraph{Lösung:} 
 \begin{align*}
-P_{8,0.05}(|X- \mu| < 0.08) &= P_{8,0.05}(-0.08 < X - \mu < 0.08) = P_{8,0.05}(-0.08 + \mu < X < 0.08 + \mu)\\
-&= P\left(\frac{-0.08 + \mu - \mu}{\sigma} < X < \frac{0.08 + \mu - \mu}{\sigma}\right) = P\left(\frac{-0.08}{\sigma} < X < \frac{0.08}{\sigma}\right)\\
+P_{8,0.05}(|X- \mu| < 0.08) &= P_{8,0.05}(-0.08 < X - \mu < 0.08) \\
+&= P_{8,0.05}(-0.08 + \mu < X < 0.08 + \mu)\\
+&= P\left(\frac{-0.08 + \mu - \mu}{\sigma} < X < \frac{0.08 + \mu - \mu}{\sigma}\right) \\
+&= P\left(\frac{-0.08}{\sigma} < X < \frac{0.08}{\sigma}\right)\\
 &= P(-1.6 < X < 1.6) = 2\cdot \Phi(1.6) - 1 = 0.8904
 \end{align*}
 
@@ -332,18 +336,25 @@ Das Gewicht eines Blattes Schreibpapier sei normalverteilt mit Erwartungswert $\
 \end{enumerate}
 \paragraph{Lösung:}
 \subparagraph{(a)}
-\[P_{4.95 , 0.05}(X>5) =?\]
+
+\begin{align*}
+P_{4.95 , 0.05}(X>5) &= P\left( \frac{X-4.95}{0.05} > \frac{5 - 4.95}{0.05}\right)\\
+&\text{es gilt:} Y = \frac{X - \mu}{\sigma}\\
+&= P\left(Y > 1\right) = 1 - P\left(Y \le 1\right) = 1 - \Phi (1) = 0.1587
+\end{align*}
 \subparagraph{(b)}
 \[\mu_Z = \mu*4 = 19.8\]
 \[\sigma_Z^{2} = (\sigma)^{2}*4 = 0.01 \rightarrow \sigma_Z = 0.1 \]
-\[ P_{19.8 ; 0.1}(X>20) = ? \]
-
+\begin{align*}
+P_{19.8 ; 0.1}(X>20) &= P \left(Y > \frac{20 - 19.8}{0.1}\right) = 1 - P(Y \le 2)\\
+&= 1 - \Phi (2) = 0.0227
+\end{align*}
 \section{Anwendung der Grenzwertsätze}
 \subsection{}
 Man betrachte das Bernoulli-Schema vom Umfang $n=100$ und der Erfolgswahrscheinlichkeit $p=0.1$ . Unter Anwendung des Grenzwertsatzes von Moivre-Laplace berechne man die Wahrscheinlichkeit für höchstens 12 Erfolge.
 \paragraph{Lösung:}
-$n = 100$, $p = 0.1$, 12 Erfolge. Korrektur $S_100 < 12.5$, da 12 Erfolge ebenfalls noch gültig sind.\\
-Für große $n$ ist die Bernoulli-Verteilung normalverteilt mit den parametern:
+$n = 100$, $p = 0.1$, 12 Erfolge. Korrektur $S_{100} < 12.5$, da 12 Erfolge ebenfalls noch gültig sind.\\
+Für große $n$ ist die Bernoulli-Verteilung normalverteilt mit den Parametern:
 \begin{align*}
 \mu &= np,\qquad \sigma = \sqrt{np(1-p)}\\
 \mu &= 10,\qquad\sigma = 3\\
@@ -359,12 +370,10 @@ Eine symmetrische Münze wird $n$ mal geworfen. Dementsprechend betrachte man da
 \begin{align*}
 \mu &= np,\qquad \sigma = \sqrt{np(1-p)}\\
 \mu &= 12.5,\qquad\sigma = 2.5\\
-\text{zu berechnen: }&0.4 < P(E) < 0.6 \\
-&P(E<0.6) - P(E<0.4)= \Phi\left(\frac{0.6 - 12.5}{2.5}\right) - \Phi\left(\frac{0.4 - 12.5}{2.5}\right)\\
-&= \Phi(-4.76) - \Phi(-4.84) = 1- \Phi(4.76) - \left( 1 - \Phi(4.84)\right)\\
-&= - \Phi(4.76) + \Phi(4.84) =& 
+\text{zu berechnen: }&0.4n < P(E) < 0.6n \\
+&P(E<0.6n) - P(E<0.4n)= \Phi\left(\frac{15 - 12.5}{2.5}\right) - \Phi\left(\frac{10 - 12.5}{2.5}\right)\\
+&= \Phi(1) - \Phi(-1) = 2\cdot \Phi (1) - 1  
 \end{align*}
-
 
 \subsection{}
 Ein symmetrischer Spielwürfel wird 24 mal geworfen. Mit welcher Wahrscheinlichkeit erscheint wenigstens dreimal die Augenzahl 6? Man beantworte die Frage unter Anwendung des Grenzwertsatzes von Moivre-Laplace.
@@ -383,10 +392,13 @@ Ein sechsflächiger symmetrischer Spielwürfel wird $n$ mal geworfen. Unter Anwe
 \paragraph{Lösung:}
 Da $X_1$ bis $X_n$ unabhängig normalverteilt sind gilt: $S_n = \sum_{i=1}^{6}\left( (i - 3.5)^{2}\cdot \frac{1}{6}\right)$
 \begin{align*}
-P(3.4 \le M_n \le 3.6) &= P(|M_n -3.5| \le 0.1)\\
 M_n &= \frac{1}{n}(X_1 + \cdots + X_n)\\
 \mu &= E(M_n) = 3.5, \text{es gilt: } M_n = \frac{S_n}{n}\\
-V(M_n) &= V(S_N)\cdot \frac{1}{n} = \sum_{i=1}^{6}\left( (i - 3.5)^{2}\cdot \frac{1}{6}\right) \cdot\frac{1}{n}= \frac{35}{12}\cdot \frac{1}{n}
+V(M_n) &= V(S_N)\cdot \frac{1}{n} = \sum_{i=1}^{6}\left( (i - 3.5)^{2}\cdot \frac{1}{6}\right) \cdot\frac{1}{n}= \frac{35}{12}\cdot \frac{1}{n}\\
+\sigma &= \sqrt{V(M_N)} = \sqrt{\frac{35}{12n}}\\
+P(3.4 \le M_n \le 3.6) &= P_{\mu, \sigma}(M_n\le 3.6) - P_{\mu, \sigma}(M_n \le 3.4) \\
+&= P\left(M_n \le \frac{3.6 - 3.5}{\sqrt{\frac{35}{12n}}}\right) - P\left(M_n \le \frac{3.4 - 3.5}{\sqrt{\frac{35}{12n}}}\right) \\
+\text{Für n = 500: }&= 2 \Phi \left(1.31\right) - 1
 \end{align*}
 \subsection{}
 Bei der Herstellung von bestimmten Bauteilen beträgt der Auschussanteil 3 \%. Wie viele Bauteile muss ein Kunde wenigstens bestellen, damit er mit einer Wahrscheinlichkeit von 0.99 mindestens 1200 brauchbare Teile erhält?
@@ -432,7 +444,7 @@ $n_i$ & 4 & 6 & 19 & 36 & 51 & 58 & 53 & 37 & 20 & 9 & 3 & 1 \\\hline
 \paragraph{Lösung:}
 $\overline{X} = 1502.\overline{6} \approx 1503$\\
 $n = \sum n_i$\\
-$S^{2} = \frac{1}{n-1}\sum_{i=1}^{k}  n_i \cdot (X_i - \overline{X}) = 41665.22$ 
+$S^{2} = \frac{1}{n-1}\sum_{i=1}^{k}  n_i \cdot (X_i - \overline{X})^{2} \approx 40038.01$ 
 \subsection{}
 Ein Computer erzeugt Zufallszahlen entsprechend einem Poisson-Verteilungsgesetz. Die absoluten Häufigkeiten der aufgetretenen Zahlen sind in der Tabell für eine Stichprobe vom Umfang $n=50$ wiedergegeben. Man verwende den konkreten empirischen mittelwert $\overline{x}$ der Stichprobe als Schätzwert $\tilde{\mu}$ für den unbekannten Parameter $\mu$ der Verteilung und berechne die Wahrscheinlichkeiten $f(k)$ für $k\le 4$. Stimmen sie mit den relativen Häufigkeiten überein?\\
 \\
@@ -483,7 +495,7 @@ P(|U| \le c) = 2\Phi(c)-1 &= 0.95 \rightarrow \Phi(c) = 0.975\rightarrow c = 1.9
 \end{align*}
 \subparagraph{(b)}
 \begin{equation*}
-2c\frac{\sigma}{\sqrt{n}} \le 5 \rightarrow \frac{2c\sigma}{5} \le \sqrt{n}\rightarrow n \geq 245.86 \approx 246\text{ Stichproben}
+2\cdot c\frac{\sigma}{\sqrt{n}} \le 5 \rightarrow \frac{2c\sigma}{5} \le \sqrt{n}\rightarrow n \geq 245.86 \approx 246\text{ Stichproben}
 \end{equation*}
 \subsection{}
 Um die Lebensdauer einer bestimmten Sorte von Glühlampen zu überprüfen, wurde der Produktion eine Stichprobe vom Umfang $n=25$ entnommen. Es ergab sich der konkrete empirische Mittelwert $\overline{x} = 2480$ und die Standardabweichung $s=776$. Unter der Voraussetzung einer normalverteilten Grundgesamtheit bestimme man ein Konfidenzintervall für den Erwartungswert $\mu$ zum Konfidenzniveau $\gamma =0.95$. 
@@ -498,7 +510,7 @@ Um das Gewicht einer bestimmten Sorte von Schreibpapier zu überprüfen, wurde d
 4.3& 4.5& 4.2& 4.3& 4.3& 4.7 & 4.4& 4.2& 4.3& 4.5\\\hline
 \end{tabular}
 \paragraph{Lösung:}
-$n=10\quad\gamma=0.95\quad\alpha=0.05\quad s\approx 0.157\quad\overline{x}=4.37$\\
+$n=10\quad\gamma=0.95\quad\alpha=0.05\quad S\approx 0.157\quad\overline{x}=4.37$\\
 \begin{equation*}
 \overline{x} \pm t_{n-1,1-\frac{\alpha}{2}}\cdot\frac{S}{\sqrt{n}} = \overline{x}\pm t_{9,0.975}\cdot\frac{0.157}{\sqrt{10}}\rightarrow 4.26\leq\mu\leq 4.48
 \end{equation*}
@@ -613,7 +625,7 @@ f_{6,19} = 2.63
 \]
 Ablehnung wenn $f\in [W,c]$. Da f außerhalb, stimmt die Hypothese.
 \subsection{}
-Die Agrarwissenschaftler J.H. Baldwin untersuchte den Einfluss des Furchenabstandes auf den Ertrag von Getreideanbau. Die folgende Tabelle zeigt die Erträge (in \emph{ctw per acre}) aus den Jahren 1927 bis 1931 und 1934 von zwei Versuchsflächen, die mit Gerste angebaut wurden. Der Furchenabstand war 7 bzw. 3.5 (\emph{inch}):\\
+Der Agrarwissenschaftler J.H. Baldwin untersuchte den Einfluss des Furchenabstandes auf den Ertrag von Getreideanbau. Die folgende Tabelle zeigt die Erträge (in \emph{ctw per acre}) aus den Jahren 1927 bis 1931 und 1934 von zwei Versuchsflächen, die mit Gerste angebaut wurden. Der Furchenabstand war 7 bzw. 3.5 (\emph{inch}):\\
 \begin{tabular}{c c c c c c}
 \hline
 21.2& 25.6& 18.4& 15.3& 20.0& 23.6\\
@@ -622,8 +634,11 @@ Die Agrarwissenschaftler J.H. Baldwin untersuchte den Einfluss des Furchenabstan
 Die Erträge bei kleinem Furchenabstand sind im Mittel etwa $6\%$ größer. Ist dieser Unterschied signifikant? Es bezeichne $\mu$ den Erwartungswert der Differenz der Erträge. Test die Hypothese $H(\mu = 0)$ einseitig.
 \paragraph{Lösung:}
 \begin{align*}
-\overline{x} &= 21.3;\quad s = 0.7688\\
- T &= \sqrt{n}\cdot \frac{\overline{x} - \mu_0}{s} = 39.18\\
-P(\text{Ereignis trifft zu}) &= \alpha
+\overline{x_1} &= 20.7;\quad S_1 = 3.67\\
+\overline{x_2} &= 21.92;\quad S_2 = 3.64\\
+\text{Da } n_1&= n_2\text{ gilt die Formel:}\\
+T &= \sqrt{n}\frac{\overline{x_1}\cdot \overline{x_2}}{\sqrt{S_1^{2} + S_2^{2}}} = -0.578\\
+t_{2n-1;1-\alpha} &\ge 1.812
 \end{align*}
+Hypothese angenommen, da $T < t$
 \end{document}
