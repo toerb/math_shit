@@ -1,0 +1,629 @@
+\documentclass[ngerman]{scrartcl} 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+\section{Kombinatorik}
+
+\subsection{}
+
+Wieviele Permutationen der Elemente der Menge $\lbrace 1, 2, 3, 4 \rbrace$ gibt es, wenn die Zahl \textit{i} genau \textit{i}-mal auftreten soll (\textit{i} = 1, 2, 3, 4)?
+\paragraph{Lösung:}
+\begin{equation*}
+\dbinom{10}{4,3,2,1} = 12600\text{ Permutationen}
+\end{equation*}
+\subsection{}
+Man berechne die Anzahl der Diagonalen in einem konvexen \textit{n}-Eck.
+\paragraph{Lösung:}
+Jeder Knoten ist mit $n-1$ anderen Knoten verbunden. Nehmen wir dies für alle an, werden alle Verbindungen doppelt gewählt. Danach müssen noch alle $n$ Aussenkanten abgezogen werden: \[ \frac{n\cdot (n-1)}{2} - n \]
+\subsection{}
+Es stehen \textit{n} Farben zur Verfügung. Auf wieviele unterscheidbare Arten lässt sich ein aus zwei Quadraten bestehendes Rechteck färben.
+\paragraph{Lösung:}
+$n$ Farben, 2 Quadrate, $\tbinom{n}{2}$ Möglichkeiten für unterschiedliche Kombinationen und $n$ Kombinationen für 2 gleichfarbige Quadrate:
+\begin{equation*}
+\dbinom{n}{2} + n =\frac{n!}{2!\cdot (n-2)!} + n = \frac{n\cdot (n-1)}{2} + n = \frac{n(n+1)}{2}
+\end{equation*}
+\subsection{}
+Auf wieviele Arten kann man im quadratischen Straßennetz ohne Umweg von der Straßenecke A zur Straßenecke B gehen? Wie viele Arten bleiben übrig, wenn der Weg über die Straßenecke K führen soll?
+\paragraph{Lösung:}
+Ohne Umwege sind es immer 8 Schritte, vier nach rechts und vier nach oben:
+\begin{equation*}
+\dbinom{8}{4,4} = 70\text{ Wege}
+\end{equation*}
+Wege über k:
+\begin{equation*}
+(A\rightarrow k)\cdot (k\rightarrow B) = \dbinom{3}{2,1}\cdot\dbinom{5}{2,3} = 30 \text{ Wege}
+\end{equation*}
+\subsection{}
+
+In einer Urne liegen vier Kugeln, die mit den Ziffern eins bis vier nummeriert sind. Nacheinander werden 10 Kugeln mit zurücklegen gezogen, die Ziffern notiert und der Größe nach geordnet. Wieviele 10-Tupel dieser Art gibt es?
+\paragraph{Lösung:}
+$k=10, n=4$
+\begin{equation*}
+\dbinom{n+k-1}{k} = \dbinom{13}{10} = 286 \text{ Tupel}
+\end{equation*}
+\subsection{}
+
+Man betrachte die Menge aller Zahlenfolgen der Länge 3 aus $\lbrace 1, 2, 3, 4 \rbrace$.
+
+\begin{enumerate}
+\item[(a)] Wieviele Zahlenfolgen dieser Art gibt es?
+\item[(b)] Wie groß ist die Anzahl steigender Zahlenfolgen dieser Art?
+\item[(c)] Wieviele Zahlenfolgen bleiben übrig, wenn sie \textit{streng} steigend sein soll?
+\end{enumerate}
+\paragraph{Lösung:}
+\subparagraph{(a)} \begin{center}
+$4^{3} = 64$ Möglichkeiten
+\end{center}
+\subparagraph{(b)} \[\dbinom{n+k-1}{k} = \dbinom{6}{3} = 20\]
+\subparagraph{(c)} \[\dbinom{4}{3} = 4\]
+\subsection{}
+
+Es sei $M = \lbrace 1, 2, 3, 4 \rbrace$.
+\begin{enumerate}
+\item[(a)] Wieviele Funktionen von $M$ in $M$ gibt es?
+\item[(b)] Wieviele Funktionen dieser Art sind injektiv?
+\item[(c)] Wieviele Funktionen von $M$ in $M$ sind steigend?
+\end{enumerate}
+
+\paragraph{Lösung:}
+Funktionen bilden \textbf{jedes} Element der Ausgangsmenge auf \textbf{ein} Element der Bildmenge ab. Daher kann die Abbildung auch als 4er Tupel aus $M$ dargestellt werden, wobei das erste Element das Bild von $1$, das zweite Element das Bild von $2$ usw.
+\subparagraph{(a)}
+\begin{equation*}
+4^{4} = 256 \text{ Funktionen}
+\end{equation*}
+\subparagraph{(b)}
+Entspricht ziehen ohne Zurücklegen, da kein Element das Bild für 2 Elemente sein darf.
+\[4! = 24\]
+\subparagraph{(c)}
+\begin{equation*}
+\dbinom{n+k-1}{k} = \dbinom{7}{4} = 35
+\end{equation*}
+
+\subsection{}
+
+Auf wieviele unterscheidbare Arten lassen sich die Münzen $1, 1, 1, 2, 2, 2$ anordnen?
+\paragraph{Lösung:}
+\begin{equation*}
+	\dbinom{6}{3,3} = 20\dfrac{\text{Zähler}}{\text{Nenner}}
+\end{equation*}
+\section{Ereignisse im Laplace-Wahrscheinlichkeitsraum}
+
+\subsection{}
+
+Aus der Menge $\lbrace 000, 001, ..., 999 \rbrace$ wird zufällig ein Element gewählt. Mit welcher Wahrscheinlichkeit tritt (a) die Ziffer 7 wenigstens einmal auf? (b) die Ziffer 3 genau zweimal auf?
+\paragraph{Lösung:}
+\subparagraph{(a)}
+Anzahl an Möglichkeiten, dass die Ziffer wenigstens einmal auftritt.
+\[ 3*9^{2} + 3 * 9 + 1 = 271 \]
+Wahrscheinlichkeit\[ \frac{271}{1000} \]
+\subparagraph{(b)}
+\[ 3*9 = 27 \]
+
+\subsection{}
+
+Mit welcher Wahrscheinlichkeit erhält man bei dreimaligem Würfeln mit einem symmetrischen Spielwürfel wenigstens einmal eine Sechs?
+\paragraph{Lösung:}
+\[ 1-(\frac{5}{6})^{3} \]
+
+\subsection{}
+
+In einer Urne befinden sich zehn gleichartige Kugeln. Die Kugeln sind nummeriert. Mit einem Griff werden drei Kugeln gezogen. Mit welcher Wahrscheinlichkeit gehört die Kugel mit der Nummer sieben dazu.
+\paragraph{Lösung:}
+\[ 1- \frac{9}{10} * \frac{8}{9} * \frac{7}{8} = 1-\frac{7}{10} =\frac{3}{10} \]
+
+\subsection{}
+
+Neun Kugeln werden zufällig und unabhängig von einander auf drei Urnen verteilt. Wie groß ist die Wahrscheinlichkeit dafür, dass sich in jeder Urne drei Kugeln befinden?
+\paragraph{Lösung:}
+\[ \frac{\dbinom{9}{3 3 3}}{3^9} = 0,085 \]
+
+\subsection{}
+
+Wie groß ist die Wahrscheinlichkeit dafür, dass von $n$ zufällig ausgewählten Personen wenigstens zwei im gleichen Monat Geburtstag haben?
+\paragraph{Lösung:}
+\[  \frac{\dbinom{12}{n}}{\dbinom{12+n-1}{n}}   \]
+
+
+\subsection{}
+
+Bei einem Kartenspiel werden 52 gut gemischte Karten, unter denen sich 4 Asse befinden, an vier Spieler ausgeteilt. Jeder Spieler erhält 13 Karten. Mit welcher Wahrscheinlichkeit erhält jeder Spieler ein Ass?
+
+\paragraph{Lösung:}
+\begin{equation}
+\frac{\dbinom{4}{1}\dbinom{48}{12}}{\dbinom{52}{13}} \cdot 
+\frac{\dbinom{3}{1}\dbinom{36}{12}}{\dbinom{39}{13}} \cdot
+\frac{\dbinom{2}{1}\dbinom{24}{12}}{\dbinom{26}{13}} \cdot 1
+\end{equation}
+\subsection{}
+
+Man betrachte Zufallsfolgen der Länge vier aus der Menge $\lbrace 0, 1 \rbrace$. Dabei bezeichne $A$ das Ereignis "`die Folge beginnt mit Ziffer 1"', $B$ das Ereignis "`die Folge besteht aus einer geraden Anzahl der Ziffer 0"'. Sind $A$ und $B$ unabhängig?
+
+\paragraph{Lösung:}
+Die Wahrscheinlichkeiten ergeben sich durch auszählen der Ereignisse, bei 16 Gesamtereignissen.
+\begin{align}
+P(A) &= 50 \% \qquad P(B) = \frac{7}{16}\\
+P(A\cap B) &= \frac{3}{16}\\
+P(A\cap B) &\neq P(A) \cdot P(B)
+\end{align}
+
+\subsection{}
+
+Ein Werkstück wird auf zwei Maschinen gefertigt. Die zweite Maschine produziert bei 5\% Ausschuss doppelt so viele Werkstücke wie die erste Maschine, die mit nur 2\% Ausschuss arbeitet. Welchen Ausschussanteil hat die Gesamtproduktion?
+
+\paragraph{Lösung:}
+\begin{equation}
+\frac{0.05 + 0.05 + 0.02}{3} = 0.04
+\end{equation}
+
+\section{diskrete Wahrscheinlichkeitsverteilung}
+
+\subsection{}
+Zwölf Personen werden zufällig in zwei Gruppen zu je sechs Personen aufgeteilt. Unter den 12 Personen befindet sich 2 Brüder. Wie groß ist die Wahrscheinlichkeit, dass beide Brüder in dieselbe Gruppe kommen?
+\paragraph{Lösung:}
+Hypergeometrische Wahrscheinlichkeit
+\begin{equation}
+\frac{\dbinom{2}{0}\dbinom{10}{6}}{\dbinom{12}{6}} +
+\frac{\dbinom{2}{2}\dbinom{10}{4}}{\dbinom{12}{6}} = \frac{5}{11}
+\end{equation}
+
+\subsection{}
+Eine Sendung mit 100 Werkstücken enthält 10 fehlerhafte Stücke. Der Sendung werden 5 Werkstücke entnommen. Mit welcher Wahrscheinlichkeit befindet sich hierunter wenigstens ein fehlerhaftes. 
+\paragraph{Lösung:}
+Wahrscheinlichkeit des Gegenbeispiels:
+\begin{equation}
+P(A) = 1 - P(!A) = 1 - \left(\frac{90}{100} \cdot \frac{89}{99} \cdot \frac{88}{98} \cdot \frac{87}{97} \cdot \frac{86}{96}\right) = 1 - 0.58 = 0.42
+\end{equation}
+
+\subsection{}
+Beim Lottospiel 6 aus 49. Man berechne die Wahrscheinlichkeit dafür, dass bei der Ziehung der Lottozahlen $k$ ''Erfolge''  eintreten ($k \in \lbrace0,...,6\rbrace$)
+\paragraph{Lösung:}
+Allgemein:
+\begin{equation}
+\frac{\dbinom{6}{k}\dbinom{43}{6-k}}{\dbinom{49}{6}}
+\end{equation}
+
+\subsection{}
+Eine symmetrische Münze wird zehnmal geworfen:
+\begin{enumerate}
+\item[(a)] Man berechne die Wahrscheinlichkeit für $i$ Erfolge ($i = 0,...,10$)
+\item[(b)] welche Wahrscheinlichkeit hat das Ereignis ''vier, fünf oder sechs Erfolge''
+\end{enumerate}
+\paragraph{Lösung:}
+Bernoulli-Verteilung
+\subparagraph{(a)}
+\begin{align}
+p = 0.5 &\qquad n = 10\\
+P &=  \dbinom{n}{k} p^{k} (1-p)^{n-k}
+\end{align}
+\subparagraph{(b)} Addieren der Teilergebnisse
+\subsection{}
+Wie oft muss man einen symetrischen Spielwürfel werfen, um mit einer Wahrscheinlichkeit von wenigstens 0.99 mindestens einmal die Augenzahl sechs zu erhalten?
+\paragraph{Lösung :}
+Gegenereignis:
+\begin{equation}
+1- \left(\frac{5}{6}\right)^{k} = 0.99 \rightarrow \left(\frac{5}{6}\right)^{k} = 0.01 
+\rightarrow k = \frac{\ln 0.01}{\ln \frac{5}{6}} = 25.26 \rightarrow 26 \text{ Versuche}
+\end{equation}
+
+\subsection{}
+Ist es wahrscheinlicher, bei viermaligem Werfen eines Würfels wenigstens einmal die Sechs oder bei 24 Würfen von zwei Würfeln wenigstens einmal eine Doppelsechs zu erhalten?
+\paragraph{Lösung:}
+Für einen Würfel:
+\begin{equation}
+P_1 = 1- \left(\frac{5}{6}\right)^{4} = 0.518
+\end{equation}
+Für zwei Würfel:
+\begin{equation}
+P_2 = 1- \left(\frac{35}{36}\right)^{24} = 0.491
+\end{equation}
+
+\subsection{}
+Man hat festgestellt, dass innerhalb einer Minute im Mittel sechs Fahrzeuge einen bestimmten Streckenabschnitt passieren. Man berechne die Wahrscheinlichkeit dafür, dass innerhalb dieser Zeit höchstens vier Fahrzeuge den Abschnitt passieren.
+\paragraph{Lösung:}
+Poisson mit $\lambda = 6$ und $k= 4$
+\begin{equation}
+P_\lambda(k) = \frac{\lambda^{k}}{k!}\cdot e^{-\lambda} = \frac{6^{4}}{4!}\cdot e^{-6} = 0.13
+\end{equation}
+
+\subsection{}
+Eine Telefonzelle erhält im Mittel zwei Anforderungen pro Zeiteinheit. Man berechne die Wahrscheinlichkeit dafür, dass sie innerhalb der Zeiteinheit:
+\begin{enumerate}
+\item[(a)] keine Anforderung bekommen
+\item[(b)] mindestens 3 Anforderungen bekommen
+\end{enumerate}
+\paragraph{Lösung:}
+\subparagraph{(a)}
+Wie vorherige Aufgabe, mit $\lambda=2$ und $k=0$\[ P(0) = 0.135\]
+\subparagraph{(b)}
+Gegenereignis: Summe von Wahrscheinlichkeit für $k=0,1,2$
+\begin{align*}
+\sum_{k=0}^2{P(k)} &= 0.677 \\
+P(k\geq 3) &= 1 - \sum_{k=0}^2{P(k)} \\
+&= 0.323
+\end{align*}
+\subsection{}
+Ein Buch hat 500 Seiten. Bei sorgfältiger Durchsicht der Seiten wurden 500 Druckfehler festgestellt. Mit welcher Wahrscheinlichkeit enthält eine zufällig Ausgewählte Seite mehr als zwei Druckfehler.
+\paragraph{Lösung:}
+Poisson mit Gegenereignis: Summe von Wahrscheinlichkeit für $k=0,1,2$ und $\lambda=1$
+\begin{align*}
+\sum_{k=0}^2{P(k)} &= 0.92 \\
+P(k\geq 3) &= 1 - \sum_{k=0}^2{P(k)} \\
+&= 0.08
+\end{align*}
+
+\section{Die Normalverteilung}
+\subsection{}
+Betrachte die normalverteilte Zufallsvariable $X$ mit den Parametern $\mu = 6$ und $\sigma=2$. Man berechne die folgenden Wahrscheinlichkeiten:
+\begin{enumerate}
+\item[(a)] $P(X<7)$
+\item[(b)] $P(5<X<7)$
+\item[(c)] $P(|X-6| \geq 4)$
+\end{enumerate}
+\paragraph{Lösung}
+Standardformel:
+\begin{equation}
+P\left(\mu+\sigma\cdot X \leq x\right) = P\left(X \leq \frac{x - \mu}{\sigma}\right) = \phi\left(\frac{x - \mu}{\sigma}\right)
+\end{equation}
+\subparagraph{(a)}
+\begin{equation}
+P_{6,2}(X<7) = P\left(X < \frac{7 - 6}{2}\right) = \Phi\left(\frac{1}{2}\right) = 0.6915
+\end{equation}
+\subparagraph{(b)}
+\begin{equation}
+P_{6,2}(5<X<7) = P\left(\frac{5 - 6}{2} < X < \frac{7 - 6}{2}\right) = \Phi\left( \frac{1}{2}\right) - \Phi\left(- \frac{1}{2}\right) = 2\cdot\Phi\left( \frac{1}{2}\right) - 1 = 0.383
+\end{equation}
+\subparagraph{(c)}
+\begin{align*}
+P_{6,2}(|X-6| \geq 4) &= 1 - P_{6,2}(|X-6| < 4) = 1 - P_{6,2}(-4 < X-6 <4) \\
+&= 1 - P_{6,2}(2 < X < 10)\\
+P_{6,2}(2 < X < 10) &= P\left(\frac{2 - 6}{2} < X < \frac{10 - 6}{2}\right) = P(-2 < X < 2) = 2\cdot \Phi(2) - 1\\
+1 - \left(2\cdot \Phi(2) - 1 \right) &= 1 - 0.9554 = 0.0446
+\end{align*}
+
+\subsection{}
+Siehe Aufgabe 4.1
+
+\subsection{}
+Die Zufallsvariable $X$ ist normalverteilt mit den Parametern $\mu$ und $\sigma$. Man Berechne die Wahrscheinlichkeit $P(|X-\mu| < k\sigma) (k = 1,2,3)$
+\paragraph{Lösung:}
+\begin{align*}
+P_{\mu,\sigma}&(|X-\mu| < k\sigma) = P_{\mu,\sigma}(-k\sigma <X-\mu < k\sigma) = P_{\mu,\sigma}(-k\sigma + \mu < X < k\sigma + \mu)\\
+&= P\left(\frac{-k\sigma + \mu -\mu}{\sigma} < X < \frac{k\sigma + \mu -\mu}{\sigma}\right) = P(-k < X < k ) = 2\cdot \Phi(k) - 1
+\end{align*}
+
+\subsection{}
+Eine Maschine sellt Metallplatten her. Die Dicke der Metallplatten ist normalverteit mit Erwartungswert $\mu = 8$ und Standardabweichung $\sigma = 0.05$. Man berechne die Wahrscheinlichkeit dafür, dass der Betrag der Abweichung vom Erwartungswert höchstens 0.08 beträgt.
+\paragraph{Lösung:} 
+\begin{align*}
+P_{8,0.05}(|X- \mu| < 0.08) &= P_{8,0.05}(-0.08 < X - \mu < 0.08) = P_{8,0.05}(-0.08 + \mu < X < 0.08 + \mu)\\
+&= P\left(\frac{-0.08 + \mu - \mu}{\sigma} < X < \frac{0.08 + \mu - \mu}{\sigma}\right) = P\left(\frac{-0.08}{\sigma} < X < \frac{0.08}{\sigma}\right)\\
+&= P(-1.6 < X < 1.6) = 2\cdot \Phi(1.6) - 1 = 0.8904
+\end{align*}
+
+\subsection{}
+Bei einem Herstellungsverfahren ist die Abweichung des Maßes vom Sollwert normalverteilt mit $\mu =0$ und $\sigma = 2$. Dabei ist die Tolerant für den Betrag der Abweichung mit 3.6 gegeben. Man berechne den Schätzwert für den Bruchteil der Werkstücke, die der Anforderung entsprechen.
+\paragraph{Lösung:}
+Siehe Aufgabe 4.2.(c)
+\subsection{}
+Zwei Zufallsvariablen $X$ und $Y$ sind unabhängig und normalverteilt mit $\mu_1 =1, \sigma_1 = 3, \mu_2 = -1, \sigma_2 = 4$. Wie lautet das Verteilungsgesetz der Zufallsvariablen?
+\paragraph{Lösung:}
+Erwartungswert:
+\begin{equation*}
+E(Z) = E(X) + E(Y) = 1 - 1 = 0
+\end{equation*}
+Varianz:
+\begin{equation*}
+V(Z) = V(X) + V(Y) + CoV(X,Y)
+\end{equation*}
+Die Covarianz ist 0, da $X$ und $Y$ unabhängig von einander sind. 
+\begin{equation*}
+V(Z) = \sigma_1^{2} + \sigma_2^{2} = 9 + 16 = 25 \rightarrow \sigma_3 = 5
+\end{equation*}
+
+\subsection{}
+Das Gewicht eines Blattes Schreibpapier sei normalverteilt mit Erwartungswert $\mu = 4.95$ und Standardabweichung $\sigma = 0.05$. 
+\begin{enumerate}
+\item[(a)] Mit welcher Wahrscheinlichkeit ist das Gewicht eines Blattes größer als 5?
+\item[(b)] Es werden vier Blätter auf die Waage gelegt. Mit welcher Wahrscheinlichkeit ist das Gesamtgewicht größer als 20?
+\end{enumerate}
+\paragraph{Lösung:}
+\subparagraph{(a)}
+\[P_{4.95 , 0.05}(X>5) =?\]
+\subparagraph{(b)}
+\[\mu_Z = \mu*4 = 19.8\]
+\[\sigma_Z^{2} = (\sigma)^{2}*4 = 0.01 \rightarrow \sigma_Z = 0.1 \]
+\[ P_{19.8 ; 0.1}(X>20) = ? \]
+
+\section{Anwendung der Grenzwertsätze}
+\subsection{}
+Man betrachte das Bernoulli-Schema vom Umfang $n=100$ und der Erfolgswahrscheinlichkeit $p=0.1$ . Unter Anwendung des Grenzwertsatzes von Moivre-Laplace berechne man die Wahrscheinlichkeit für höchstens 12 Erfolge.
+\paragraph{Lösung:}
+$n = 100$, $p = 0.1$, 12 Erfolge. Korrektur $S_100 < 12.5$, da 12 Erfolge ebenfalls noch gültig sind.\\
+Für große $n$ ist die Bernoulli-Verteilung normalverteilt mit den parametern:
+\begin{align*}
+\mu &= np,\qquad \sigma = \sqrt{np(1-p)}\\
+\mu &= 10,\qquad\sigma = 3\\
+\text{Standartisiert: } &\Phi \left(\frac{12.5-10}{3}\right) = \Phi\left(\frac{5}{6}\right) \approx \Phi (0.83) \approx 0.797
+\end{align*}
+
+\subsection{}
+Eine symmetrische Münze wird $n$ mal geworfen. Dementsprechend betrachte man das Bernoulli-Schema vom Umfang $n$ und der Erfolgswahrscheinlichkeit $p=0.5$ und berechne unter Anwendung des Grenzwertsatzes von Moivre-Laplace die Wahrscheinlichkeit dafür, dass die relative Anzahl an Erfolge zwischen 0.4 und 0.6 liegt
+\begin{enumerate}
+\item[(a)] n=25
+\item[(b)] n=100
+\end{enumerate}
+\begin{align*}
+\mu &= np,\qquad \sigma = \sqrt{np(1-p)}\\
+\mu &= 12.5,\qquad\sigma = 2.5\\
+\text{zu berechnen: }&0.4 < P(E) < 0.6 \\
+&P(E<0.6) - P(E<0.4)= \Phi\left(\frac{0.6 - 12.5}{2.5}\right) - \Phi\left(\frac{0.4 - 12.5}{2.5}\right)\\
+&= \Phi(-4.76) - \Phi(-4.84) = 1- \Phi(4.76) - \left( 1 - \Phi(4.84)\right)\\
+&= - \Phi(4.76) + \Phi(4.84) =& 
+\end{align*}
+
+
+\subsection{}
+Ein symmetrischer Spielwürfel wird 24 mal geworfen. Mit welcher Wahrscheinlichkeit erscheint wenigstens dreimal die Augenzahl 6? Man beantworte die Frage unter Anwendung des Grenzwertsatzes von Moivre-Laplace.
+\paragraph{Lösung:}
+$n = 24$, $p = \dfrac{1}{6}$, $S_{24} < 3$
+\begin{align*}
+\mu &= 4,\qquad \sigma = \sqrt{\frac{10}{3}}\\
+1 &- \Phi\left(\frac{3 - 4}{\sqrt{\frac{10}{3}}}\right) = 1 - \left(1 - \Phi\left( \frac{1}{\sqrt{\frac{10}{3}}}  \right)\right) = \Phi(0.548) \approx 0.7088
+\end{align*}
+\subsection{}
+Ein sechsflächiger symmetrischer Spielwürfel wird $n$ mal geworfen. Unter Anwendung des zentralen Grenzwertsatzes berechne man die Wahrscheinlichkeit dafür, dass das arithmetische Mittel der Augenzahlen zwischen 3.4 und 3.6 liegt, mit 
+\begin{enumerate}
+\item[(a)] $n =500$
+\item[(b)] $n =1000$
+\end{enumerate}
+\paragraph{Lösung:}
+Da $X_1$ bis $X_n$ unabhängig normalverteilt sind gilt: $S_n = \sum_{i=1}^{6}\left( (i - 3.5)^{2}\cdot \frac{1}{6}\right)$
+\begin{align*}
+P(3.4 \le M_n \le 3.6) &= P(|M_n -3.5| \le 0.1)\\
+M_n &= \frac{1}{n}(X_1 + \cdots + X_n)\\
+\mu &= E(M_n) = 3.5, \text{es gilt: } M_n = \frac{S_n}{n}\\
+V(M_n) &= V(S_N)\cdot \frac{1}{n} = \sum_{i=1}^{6}\left( (i - 3.5)^{2}\cdot \frac{1}{6}\right) \cdot\frac{1}{n}= \frac{35}{12}\cdot \frac{1}{n}
+\end{align*}
+\subsection{}
+Bei der Herstellung von bestimmten Bauteilen beträgt der Auschussanteil 3 \%. Wie viele Bauteile muss ein Kunde wenigstens bestellen, damit er mit einer Wahrscheinlichkeit von 0.99 mindestens 1200 brauchbare Teile erhält?
+\paragraph{Lösung:}
+$X$ ist die Anzahl brauchbarer Elemente. $X$ ist Binomialverteilt ($n,p$). $p=0.97$. $P(X>1200) = 0.99$
+\begin{align*}
+E(X) &= np = 0.97n\\
+V(X) &= np(1-p) = 0.97\cdot 0.03\cdot n = \\
+\text{Normalisieren: } &P\left(\frac{X- 0.97n}{0.17\sqrt{n}} > \frac{1200 - 0.97n}{0.17\sqrt{n}}\right)=0.99\\
+&\approx 1 - \Phi\left(\frac{1200-0.97n}{0.17\sqrt{n}}\right) \rightarrow \Phi\left(\frac{1200-0.97n}{0.17\sqrt{n}}\right) = 0.01\\
+\rightarrow \Phi^{-1}\left(\Phi\left(\frac{1200-0.97n}{0.17\sqrt{n}}\right)\right) &= \Phi^{-1}(0.01)\rightarrow \frac{1200 - 0.97n}{0.17\sqrt{n}} = c_{0.01} \approx -2.326\\
+\rightarrow 0.97n - 0.396\sqrt{n} - 1200 &= 0 \\
+n &= 1254.74 \approx 1252
+\end{align*}
+
+\section{Statistische Kenngrößen}
+\subsection{}
+Berechne den Mittelwert und die Standardabweichung der konkreten Stichproben\\
+\\
+\begin{tabular}{c c c c c c c c c c c c c}
+(a) & & & 1.40& 1.45& 1.39& 1.44& 1.38& & & & & \\
+(b) & & & 49.9& 48.8& 51.2& 50.5& 50.1& 48.7& 50.9& 51.4& 50.6& 50.0\\
+(c) & & & 122& 125& 117& 124& 121& 120& 125& & & \\
+\end{tabular}
+
+\paragraph{Lösung:}
+Mittelwert: $\overline{X}= \frac{1}{n}\cdot\sum_{i=1}^{n} X_i $\\
+Standardabweichung: $S^{2} = \frac{1}{n-1}\sum_{i=1}^{n}\left(X_i - \overline{X}\right)^{2}$
+\subparagraph{(a)}
+$\overline{X} = 1.412$, $S = 0.031$
+\subparagraph{(b)}
+$\overline{X} = 50.21$, $S = 0.9146$
+\subparagraph{(c)}
+$\overline{X} = 122$, $S = 2.94$
+
+\subsection{}
+Um eine Aussage über die Qualität der in einem Werk hergestellten Glühlampen zu erhalten, wurden der Produktion eine Stichprobe vom Umfang 300 entnommen. Die Stichprobenwerte, d.h. die in Stunden gemessene Lebensdauer der Glühlampen, wurden in 12 Klassen der Breite 100 eingeteilt. Die Tabelle die jeweiligen Klassenmitten und die zugehörigen absoluten Häufigkeiten. Man berechne Näherungswerte für Mittelwert und Standardabweichung der konkreten Stichprobe.\\
+\begin{tabular}{c c c c c c c c c c c c c}
+\hline
+$X_i$ & 1000 & 1100 & 1200 & 1300 & 1400 & 1500 & 1600 & 1700 & 1800 & 1900 & 2000 & 2100 \\
+$n_i$ & 4 & 6 & 19 & 36 & 51 & 58 & 53 & 37 & 20 & 9 & 3 & 1 \\\hline
+\end{tabular}
+\paragraph{Lösung:}
+$\overline{X} = 1502.\overline{6} \approx 1503$\\
+$n = \sum n_i$\\
+$S^{2} = \frac{1}{n-1}\sum_{i=1}^{k}  n_i \cdot (X_i - \overline{X}) = 41665.22$ 
+\subsection{}
+Ein Computer erzeugt Zufallszahlen entsprechend einem Poisson-Verteilungsgesetz. Die absoluten Häufigkeiten der aufgetretenen Zahlen sind in der Tabell für eine Stichprobe vom Umfang $n=50$ wiedergegeben. Man verwende den konkreten empirischen mittelwert $\overline{x}$ der Stichprobe als Schätzwert $\tilde{\mu}$ für den unbekannten Parameter $\mu$ der Verteilung und berechne die Wahrscheinlichkeiten $f(k)$ für $k\le 4$. Stimmen sie mit den relativen Häufigkeiten überein?\\
+\\
+\begin{tabular}{c c c c c}
+\hline
+0& 1& 2& 3& 4\\
+25& 17& 6& 2& 0\\\hline
+\end{tabular}
+\paragraph{Lösung:}
+$\tilde{\mu} = \overline{X} = 0.7$
+\begin{align*}
+P_k &= \frac{\mu^{k}\cdot e^{-\mu}}{k!}\\
+P_0 &= \frac{1\cdot e^{-0.7}}{1}\approx 0.497\\
+P_1 &= \frac{0.7\cdot e^{-0.7}}{1}\approx 0.348\\
+P_2 &\approx 0.122\\
+P_3 &\approx 0.028\\
+P_3 &\approx 0.005
+\end{align*}
+
+\subsection{}
+Von 10 Personen wurde die Körpergröße und das Körpergewicht gemessen. die folgende Tabelle enthält die Messwertpaare. Man berechne den konkreten empirischen Korrelationskoeffizienten.\\
+\\
+\begin{tabular}{c c c c c c c c c c c }
+\hline
+X& 166& 177& 176& 169& 168& 173& 176&181& 180& 174\\
+Y& 57& 76& 71& 62& 62& 64& 73& 81& 77& 69\\\hline
+\end{tabular} \\\\
+
+$\overline{X} = 174,\quad \overline{Y} = 69.2$\\
+$S_x = \sqrt{25.\overline{3}}\approx 5.03,\quad S_y = \sqrt{60.4}\approx 7.77$
+\begin{equation*}
+\text{Korrelationskoeffizient: }r = \frac{\frac{1}{n-1} \sum_{j=1}^{n}\left((X_j - \overline{X})\cdot (Y_j - \overline{Y})\right)}{S_x \cdot S_y} = 63.156
+\end{equation*}
+\section{Konfidenzintervalle}
+\subsection{}
+Bei einem Herstellungsverfahren ist ein bestimmtes Maß normalverteilt mit unbekannten, von der Einstellung der Maschine abhängigen Erwartungswert $\mu$ und der Standardabweichung $\sigma = 20$. Eine Stichprobe vom Umfang $n=64$ ergab den konkreten empirischen Mittelwert $\overline{x} = 37$.
+\begin{enumerate}
+\item[(a)] Man berechne ein Konfidenzintervall für $\mu$ zur Irrtumswahrscheinlichkeit $\alpha = 0.05$
+\item[(b)] Wir groß muss der Stichprobenumfang wenigstens sein, wenn das Konfidenzintervall zur angegeben Irrtumswahrscheinlichkeit höchstens die Länge $l=5$ haben soll?
+\end{enumerate}
+\paragraph{Lösung:}
+\subparagraph{(a)}
+$\sigma = 20 \quad n =64\quad \overline{X} = 37\quad \alpha=0.05$
+\begin{align*}
+P(|U| \le c) = 2\Phi(c)-1 &= 0.95 \rightarrow \Phi(c) = 0.975\rightarrow c = 1.96\\
+\overline{x} - c\frac{\sigma}{\sqrt{n}} &\le \mu \le \overline{x} + c\frac{\sigma}{\sqrt{n}}\\
+\rightarrow & 32.1 \le \mu \le 41.9
+\end{align*}
+\subparagraph{(b)}
+\begin{equation*}
+2c\frac{\sigma}{\sqrt{n}} \le 5 \rightarrow \frac{2c\sigma}{5} \le \sqrt{n}\rightarrow n \geq 245.86 \approx 246\text{ Stichproben}
+\end{equation*}
+\subsection{}
+Um die Lebensdauer einer bestimmten Sorte von Glühlampen zu überprüfen, wurde der Produktion eine Stichprobe vom Umfang $n=25$ entnommen. Es ergab sich der konkrete empirische Mittelwert $\overline{x} = 2480$ und die Standardabweichung $s=776$. Unter der Voraussetzung einer normalverteilten Grundgesamtheit bestimme man ein Konfidenzintervall für den Erwartungswert $\mu$ zum Konfidenzniveau $\gamma =0.95$. 
+\paragraph{Lösung:}
+$n=25\quad \overline{x} =2480\quad S=776\quad \gamma=0.95=1-\alpha\quad \alpha = 0.05$ $\sigma$ ist unbekannt:
+\begin{equation*}
+\overline{x} \pm t_{n-1,1-\frac{\alpha}{2}}\cdot\frac{S}{\sqrt{n}} = 2489 \pm t_{24,0.975}\cdot\frac{776}{5}\rightarrow 2160\leq \mu \leq 2800
+\end{equation*}
+\subsection{}
+Um das Gewicht einer bestimmten Sorte von Schreibpapier zu überprüfen, wurde der Produktion eine Stichprobe vom Umfang $n=10$ entnommen. es ergaben sich folgende Gewichte in Gramm. Zum Konfidenzniveau $\gamma = 0.95$ ermittle man ein Konfidenzintervall für den Parameter $\mu$ der normalverteilten Grundgesamtheit.\\
+\begin{tabular}{c c c c c c c c c c}\hline
+4.3& 4.5& 4.2& 4.3& 4.3& 4.7 & 4.4& 4.2& 4.3& 4.5\\\hline
+\end{tabular}
+\paragraph{Lösung:}
+$n=10\quad\gamma=0.95\quad\alpha=0.05\quad s\approx 0.157\quad\overline{x}=4.37$\\
+\begin{equation*}
+\overline{x} \pm t_{n-1,1-\frac{\alpha}{2}}\cdot\frac{S}{\sqrt{n}} = \overline{x}\pm t_{9,0.975}\cdot\frac{0.157}{\sqrt{10}}\rightarrow 4.26\leq\mu\leq 4.48
+\end{equation*}
+\subsection{}
+Einer normalverteilten Grundgesamtheit wurde eine Stichprobe vom Umfang $n=25$ entnommen. Es ergab sich die konkrete empirische Standardabweichung $s=0.283$. Man ermittle ein Konfidenzintervall für die Standardabweichung $\sigma$ der Grundgesamtheit zum Konfidenzniveau $\gamma = 0.90$
+\paragraph{Lösung:}
+Das Intervall ist gegeben durch:
+\begin{equation*}
+\left[s\cdot\sqrt{\frac{n-1}{\mathcal{X}^{2}_{1-\frac{\alpha}{2};n-1}}} ; s\cdot\sqrt{\frac{n-1}{\mathcal{X}^{2}_{\frac{\alpha}{2};n-1}}}\right]
+\end{equation*}
+einsetzen liefert:
+\begin{equation*}
+\left[0.23;0.373\right]
+\end{equation*}
+
+\subsection{}
+In der Schweiz wurden in den 30 Jahren von 1871 bis 1900 insgesamt 1359671 Knaben und 1285086 Mädchen geboren. Man bestimme ein Konfidenzintervall zum Niveau 0.95 für die Wahrscheinlichkeit einer Knabengeburt.
+\paragraph{Lösung:}
+\begin{align*}
+\alpha &= 1 - \gamma = 0.05\quad c_{1-\frac{\alpha}{2}} = 1.96\\
+\overline{x} &= \frac{1359671}{2644757}=0.514\\
+\text{Intervall:} & \left[\overline{x}+\frac{1}{2\sqrt{n}}\cdot c_{1-\frac{\alpha}{2}}, \overline{x}-\frac{1}{2\sqrt{n}}\cdot c_{1-\frac{\alpha}{2}}\right] = \left[ 0.5135, 0.5147\right]
+\end{align*}
+
+\subsection{}
+Bei einer Wahl wurde aus 100 000 abgegebener Stimmen zum Zweck der Hochrechnung eine Stichprobe vom Umfang 2500 entnommen. Dabei ergab sich ein Anteil von 5.5\% der Ja-Stimmen Man berechne ein Konfidenzintervall für die Wahrscheinlichkeit einer Ja-Stimme zum Niveau 0.90. Weshalb ist dieses Intervall gleichzeitig ein Konfidenzintervall für die Wahrscheinlichkeit einer Ja-Stimme hinsichtlich der Population aller Wahlbeteiligten.
+\paragraph{Lösung:}
+\begin{align*}
+n &=2500\quad \overline{x} = 0.055\quad \alpha = 1 - \gamma = 0.1\\
+&\text{Da p nicht bei 0.5 liegt,  muss die allgemeine Formel verwendet werden:}\\	
+\text{Intervall:} & \left[\overline{x}+\frac{\overline{x}\cdot (1-\lambda)}{\sqrt{n}}\cdot c_{1-\frac{\alpha}{2}}, \overline{x}-\frac{\overline{x}\cdot (1-\lambda)}{\sqrt{n}}\cdot c_{1-\frac{\alpha}{2}}\right] = \left[0.04748 , 0.06252\right]
+\end{align*}
+
+\section{Statistische Test bei normalverteilten Grundgesamtheiten}
+\subsection{}
+Das Merkmal einer normalverteilten Grundgesamtheit mit Erwartungswert $\mu$ wurde 100 mal gemessen. Dabei ergab sich ein Mittelwert von $\overline{x} = 0.274$ und die Standardabweichung $ s = 1.20$. Man teste die Hypothese $H(\mu=0)$ zum Signifikanzniveau $\alpha = 0.05$
+\paragraph{Lösung:}
+Da $\sigma$ unbekannt:
+\begin{align*}
+T &= \sqrt{n}\cdot \frac{\overline{x} - \mu_0}{s} = 2.283\\
+&\text{Da zweiseitiger Test:}\\
+t_{n-1, \frac{\alpha}{2}} &= t_{n-1, 1-\frac{\alpha}{2}} = 1.984
+\end{align*}
+Da $T$ außerhalb des Intervalls $\left[-1.984,1.984\right]$ liegt, wird die Hypothese abgelehnt.
+\subsection{}
+Analog zu vorheriger Aufgabe
+\subsection{}
+Um die Abweichung vom Sollwert, die als normalverteilt angenommen werden kann, zu überprüfen, wird der Tagesproduktion eine Stichprobe vom Umfang $n=10$ entnommen. Es ergaben sich die in Tabelle angegebenen Messwerte. Man teste die Hypothese $H(\mu=0)$ zum Niveau $\alpha = 0.10$.\\
+Messwerte:\\
+\begin{tabular}{c c c c c c c c c c}
+\hline
+8& -5& 4& 10& -7& -2& 3& 1& 7& 11\\\hline
+\end{tabular}
+\paragraph{Lösung:}
+\begin{align*}
+n&=10;\quad \alpha =0.10;\quad \overline{x}=3;\quad s^2=\frac{1}{n-1}\sum_{i=1}^{n}\left(x_i - \overline{x}\right)^2\rightarrow s = 6.218\\
+T &= \sqrt{n}\cdot \frac{\overline{x} - \mu_0}{s} = \sqrt{10}\cdot \frac{3 - 0}{6.218}\approx 1.548\\
+t_{9,\frac{\alpha}{2}} = 1.833
+\end{align*}
+keine Ablehnung da $-t<T<t$
+\subsection{}
+Die Standardabweichung ist ein Maß für die Qualität des Produktionsprozesses eines Massenartikels. Aufgrund der Stichprobe vom Umfang $n=15$ ergab sich $s=4.6$. Widerspricht dieser Wert der Hypothese $H(\sigma = 4)$
+\paragraph{Lösung:}
+\[
+q = \frac{(n-1) s^2}{\sigma_0^2} = 18.515
+\]
+\[
+q_{14,0.90} \approx 21.06
+\]
+keine Ablehnung.
+\subsection{}
+Der Hersteller einer Präzisionswaage behauptet, dass die Standardabweichung des Messfehlers den Wert $0.02$ mg nicht überschreitet. Um dies zu überprüfen wurde das Gewicht desselben Objekts 10 mal gewogen. Aufgrund der Stichprobenwerte ergab sich die Standardabweichung $s=0.025$ Unter der Annahme, dass der Messfehler normalverteilt ist, teste man die Hypothese $H(\sigma \le 0.02)$ zum Signifikanzniveau $\alpha = 0.10$.
+\paragraph{Lösung:}
+einseitiger Test:
+\begin{equation*}
+q = \frac{(n-1)\cdot s^2}{\sigma_0^2} = \frac{9 \cdot 0.025^2}{0.02^2} = 14.0625
+\end{equation*}
+$\mathcal{X}^2$ mit Parameter $n-1$\[
+q_{9,1-\alpha} = q_{1,0.9}\approx 14.68\]
+Daher wird die Hypothese nicht abgelehnt.
+
+\subsection{}
+Zwei normalverteilten Grundgesamtheiten mit gleichen Standardabweichungen wurden Stichproben vom Umfang $n=3$ entnommen. Es ergaben sich die Messwerte:\[
+357,359,413\qquad \text{bzw.}\qquad 346,302,358
+\]
+Man teste die Hypothese $H(\mu_1 = \mu_2)$ einseitig zum Niveau (a) $\alpha =0.05$ (b) $\alpha= 0.10$
+\paragraph{Lösung:}
+\begin{align*}
+\overline{x_1} &= 376.3;\quad \overline{x_2} = 335.3;\quad s^2=\frac{1}{n-1}\sum_{i=1}^{n}\left(x_i - \overline{x}\right)^2\rightarrow s1 = 31.8;\quad s_2 = 29.5\\
+ T &= \sqrt{n}\cdot \frac{\overline{x} - \mu_0}{\sqrt{s_1^2 + s_2^2}} = 1.637
+\end{align*}
+\subparagraph{(a)}
+\begin{align*}
+t_{2n-2, 1-\alpha} = t_{4, 0.95}\approx 2.132
+\end{align*}
+Akzeptiert.
+\subparagraph{(b)}
+\begin{align*}
+t_{2n-2, 1-\alpha} = t_{4, 0.90}\approx 1.533
+\end{align*}
+Nicht akzeptiert.
+\subsection{}
+Zwei normalverteilten Grundgesamtheiten mit gleichen Standardabweichungen wurden die Stichproben vom Umfang $n_1 = 7$ bzw. $n_2 = 20$ entnommen. Aufgrund der Stichprobenwerte ergab sich die Standardabweichung $s_1 = 3.2$ bzw. $s_2 = 2.5$. Man teste die Hypothese $H(\sigma_1 = \sigma_2)$ zum Niveau $a = 0.05$
+\paragraph{Lösung:}
+
+\begin{align*}
+n_1 &= 7;\quad s_1 = 3.2;\qquad n2 = 20;\quad s_2 = 2.5;\quad \alpha = 0.05\\
+W &= \frac{s_1^2}{s_2^2} = 1.6384
+\end{align*}
+F verteilt mit $n_1-1, n_2-1$\[
+f_{6,19} = 2.63
+\]
+Ablehnung wenn $f\in [W,c]$. Da f außerhalb, stimmt die Hypothese.
+\subsection{}
+Die Agrarwissenschaftler J.H. Baldwin untersuchte den Einfluss des Furchenabstandes auf den Ertrag von Getreideanbau. Die folgende Tabelle zeigt die Erträge (in \emph{ctw per acre}) aus den Jahren 1927 bis 1931 und 1934 von zwei Versuchsflächen, die mit Gerste angebaut wurden. Der Furchenabstand war 7 bzw. 3.5 (\emph{inch}):\\
+\begin{tabular}{c c c c c c}
+\hline
+21.2& 25.6& 18.4& 15.3& 20.0& 23.6\\
+22.7& 27.4& 19.5& 17.0& 20.9& 24.0\\\hline
+\end{tabular}\\
+Die Erträge bei kleinem Furchenabstand sind im Mittel etwa $6\%$ größer. Ist dieser Unterschied signifikant? Es bezeichne $\mu$ den Erwartungswert der Differenz der Erträge. Test die Hypothese $H(\mu = 0)$ einseitig.
+\paragraph{Lösung:}
+\begin{align*}
+\overline{x} &= 21.3;\quad s = 0.7688\\
+ T &= \sqrt{n}\cdot \frac{\overline{x} - \mu_0}{s} = 39.18\\
+P(\text{Ereignis trifft zu}) &= \alpha
+\end{align*}
+\end{document}
