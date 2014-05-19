@@ -439,7 +439,7 @@ Um eine Aussage über die Qualität der in einem Werk hergestellten Glühlampen 
 \begin{tabular}{c c c c c c c c c c c c c}
 \hline
 $X_i$ & 1000 & 1100 & 1200 & 1300 & 1400 & 1500 & 1600 & 1700 & 1800 & 1900 & 2000 & 2100 \\
-$n_i$ & 4 & 6 & 19 & 36 & 51 & 58 & 53 & 37 & 20 & 9 & 3 & 1 \\\hline
+$n_i$ & 4 & 9 & 19 & 36 & 51 & 58 & 53 & 37 & 20 & 9 & 3 & 1 \\\hline
 \end{tabular}
 \paragraph{Lösung:}
 $\overline{X} = 1502.\overline{6} \approx 1503$\\
@@ -461,7 +461,7 @@ P_0 &= \frac{1\cdot e^{-0.7}}{1}\approx 0.497\\
 P_1 &= \frac{0.7\cdot e^{-0.7}}{1}\approx 0.348\\
 P_2 &\approx 0.122\\
 P_3 &\approx 0.028\\
-P_3 &\approx 0.005
+P_4 &\approx 0.005
 \end{align*}
 
 \subsection{}
@@ -577,10 +577,12 @@ Die Standardabweichung ist ein Maß für die Qualität des Produktionsprozesses 
 \[
 q = \frac{(n-1) s^2}{\sigma_0^2} = 18.515
 \]
-\[
-q_{14,0.90} \approx 21.06
-\]
-keine Ablehnung.
+$\alpha$ frei wählbar.
+\begin{align*}
+q_{14,0.01} &\approx 4.66 \\
+q_{14,0.99} &\approx 29.14
+\end{align*}
+Da 18.515 in Intervall [4.66;29.14] => keine Ablehnung.
 \subsection{}
 Der Hersteller einer Präzisionswaage behauptet, dass die Standardabweichung des Messfehlers den Wert $0.02$ mg nicht überschreitet. Um dies zu überprüfen wurde das Gewicht desselben Objekts 10 mal gewogen. Aufgrund der Stichprobenwerte ergab sich die Standardabweichung $s=0.025$ Unter der Annahme, dass der Messfehler normalverteilt ist, teste man die Hypothese $H(\sigma \le 0.02)$ zum Signifikanzniveau $\alpha = 0.10$.
 \paragraph{Lösung:}
@@ -589,7 +591,7 @@ einseitiger Test:
 q = \frac{(n-1)\cdot s^2}{\sigma_0^2} = \frac{9 \cdot 0.025^2}{0.02^2} = 14.0625
 \end{equation*}
 $\mathcal{X}^2$ mit Parameter $n-1$\[
-q_{9,1-\alpha} = q_{1,0.9}\approx 14.68\]
+q_{9,1-\alpha} = q_{9,0.9}\approx 14.68\]
 Daher wird die Hypothese nicht abgelehnt.
 
 \subsection{}
