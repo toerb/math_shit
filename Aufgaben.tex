@@ -134,22 +134,22 @@ Wie groß ist die Wahrscheinlichkeit dafür, dass von $n$ zufällig ausgewählte
 Bei einem Kartenspiel werden 52 gut gemischte Karten, unter denen sich 4 Asse befinden, an vier Spieler ausgeteilt. Jeder Spieler erhält 13 Karten. Mit welcher Wahrscheinlichkeit erhält jeder Spieler ein Ass?
 
 \paragraph{Lösung:}
-\begin{equation}
+\begin{equation*}
 \frac{\dbinom{4}{1}\dbinom{48}{12}}{\dbinom{52}{13}} \cdot 
 \frac{\dbinom{3}{1}\dbinom{36}{12}}{\dbinom{39}{13}} \cdot
 \frac{\dbinom{2}{1}\dbinom{24}{12}}{\dbinom{26}{13}} \cdot 1
-\end{equation}
+\end{equation*}
 \subsection{}
 
 Man betrachte Zufallsfolgen der Länge vier aus der Menge $\lbrace 0, 1 \rbrace$. Dabei bezeichne $A$ das Ereignis "`die Folge beginnt mit Ziffer 1"', $B$ das Ereignis "`die Folge besteht aus einer geraden Anzahl der Ziffer 0"'. Sind $A$ und $B$ unabhängig?
 
 \paragraph{Lösung:}
 Die Wahrscheinlichkeiten ergeben sich durch auszählen der Ereignisse, bei 16 Gesamtereignissen.
-\begin{align}
+\begin{align*}
 P(A) &= 50 \% \qquad P(B) = \frac{7}{16}\\
 P(A\cap B) &= \frac{3}{16}\\
 P(A\cap B) &\neq P(A) \cdot P(B)
-\end{align}
+\end{align*}
 Das heisst, $A$ und $B$ sind nicht unabhängig.
 
 \subsection{}
@@ -157,9 +157,9 @@ Das heisst, $A$ und $B$ sind nicht unabhängig.
 Ein Werkstück wird auf zwei Maschinen gefertigt. Die zweite Maschine produziert bei 5\% Ausschuss doppelt so viele Werkstücke wie die erste Maschine, die mit nur 2\% Ausschuss arbeitet. Welchen Ausschussanteil hat die Gesamtproduktion?
 
 \paragraph{Lösung:}
-\begin{equation}
+\begin{equation*}
 \frac{0.05 + 0.05 + 0.02}{3} = 0.04
-\end{equation}
+\end{equation*}
 
 \section{diskrete Wahrscheinlichkeitsverteilung}
 
@@ -167,26 +167,26 @@ Ein Werkstück wird auf zwei Maschinen gefertigt. Die zweite Maschine produziert
 Zwölf Personen werden zufällig in zwei Gruppen zu je sechs Personen aufgeteilt. Unter den 12 Personen befindet sich 2 Brüder. Wie groß ist die Wahrscheinlichkeit, dass beide Brüder in dieselbe Gruppe kommen?
 \paragraph{Lösung:}
 Hypergeometrische Wahrscheinlichkeit
-\begin{equation}
+\begin{equation*}
 \frac{\dbinom{2}{0}\dbinom{10}{6}}{\dbinom{12}{6}} +
 \frac{\dbinom{2}{2}\dbinom{10}{4}}{\dbinom{12}{6}} = \frac{5}{11}
-\end{equation}
+\end{equation*}
 
 \subsection{}
 Eine Sendung mit 100 Werkstücken enthält 10 fehlerhafte Stücke. Der Sendung werden 5 Werkstücke entnommen. Mit welcher Wahrscheinlichkeit befindet sich hierunter wenigstens ein fehlerhaftes. 
 \paragraph{Lösung:}
 Wahrscheinlichkeit des Gegenbeispiels:
-\begin{equation}
+\begin{equation*}
 P(A) = 1 - P(!A) = 1 - \left(\frac{90}{100} \cdot \frac{89}{99} \cdot \frac{88}{98} \cdot \frac{87}{97} \cdot \frac{86}{96}\right) = 1 - 0.58 = 0.42
-\end{equation}
+\end{equation*}
 
 \subsection{}
 Beim Lottospiel 6 aus 49. Man berechne die Wahrscheinlichkeit dafür, dass bei der Ziehung der Lottozahlen $k$ ''Erfolge''  eintreten ($k \in \lbrace0,...,6\rbrace$)
 \paragraph{Lösung:}
 Allgemein:
-\begin{equation}
+\begin{equation*}
 \frac{\dbinom{6}{k}\dbinom{43}{6-k}}{\dbinom{49}{6}}
-\end{equation}
+\end{equation*}
 
 \subsection{}
 Eine symmetrische Münze wird zehnmal geworfen:
@@ -197,39 +197,39 @@ Eine symmetrische Münze wird zehnmal geworfen:
 \paragraph{Lösung:}
 Bernoulli-Verteilung
 \subparagraph{(a)}
-\begin{align}
+\begin{align*}
 p = 0.5 &\qquad n = 10\\
 P &=  \dbinom{n}{k} p^{k} (1-p)^{n-k}
-\end{align}
+\end{align*}
 \subparagraph{(b)} Addieren der Teilergebnisse
 \subsection{}
 Wie oft muss man einen symetrischen Spielwürfel werfen, um mit einer Wahrscheinlichkeit von wenigstens 0.99 mindestens einmal die Augenzahl sechs zu erhalten?
 \paragraph{Lösung :}
 Gegenereignis:
-\begin{equation}
+\begin{equation*}
 1- \left(\frac{5}{6}\right)^{k} = 0.99 \rightarrow \left(\frac{5}{6}\right)^{k} = 0.01 
 \rightarrow k = \frac{\ln 0.01}{\ln \frac{5}{6}} = 25.26 \rightarrow 26 \text{ Versuche}
-\end{equation}
+\end{equation*}
 
 \subsection{}
 Ist es wahrscheinlicher, bei viermaligem Werfen eines Würfels wenigstens einmal die Sechs oder bei 24 Würfen von zwei Würfeln wenigstens einmal eine Doppelsechs zu erhalten?
 \paragraph{Lösung:}
 Für einen Würfel:
-\begin{equation}
+\begin{equation*}
 P_1 = 1- \left(\frac{5}{6}\right)^{4} = 0.518
-\end{equation}
+\end{equation*}
 Für zwei Würfel:
-\begin{equation}
+\begin{equation*}
 P_2 = 1- \left(\frac{35}{36}\right)^{24} = 0.491
-\end{equation}
+\end{equation*}
 
 \subsection{}
 Man hat festgestellt, dass innerhalb einer Minute im Mittel sechs Fahrzeuge einen bestimmten Streckenabschnitt passieren. Man berechne die Wahrscheinlichkeit dafür, dass innerhalb dieser Zeit höchstens vier Fahrzeuge den Abschnitt passieren.
 \paragraph{Lösung:}
 Poisson mit $\lambda = 6$ und $k= 4$
-\begin{equation}
+\begin{equation*}
 P_\lambda(k) = \frac{\lambda^{k}}{k!}\cdot e^{-\lambda} = \frac{6^{4}}{4!}\cdot e^{-6} = 0.13
-\end{equation}
+\end{equation*}
 
 \subsection{}
 Eine Telefonzelle erhält im Mittel zwei Anforderungen pro Zeiteinheit. Man berechne die Wahrscheinlichkeit dafür, dass sie innerhalb der Zeiteinheit:
@@ -267,17 +267,17 @@ Betrachte die normalverteilte Zufallsvariable $X$ mit den Parametern $\mu = 6$ u
 \end{enumerate}
 \paragraph{Lösung}
 Standardformel:
-\begin{equation}
+\begin{equation*}
 P_{\mu,\sigma}(X \leq x) = P\left(\mu+\sigma\cdot X \leq x\right) = P\left(X \leq \frac{x - \mu}{\sigma}\right) = \phi\left(\frac{x - \mu}{\sigma}\right)
-\end{equation}
+\end{equation*}
 \subparagraph{(a)}
-\begin{equation}
+\begin{equation*}
 P_{6,2}(X<7) = P\left(X < \frac{7 - 6}{2}\right) = \Phi\left(\frac{1}{2}\right) = 0.6915
-\end{equation}
+\end{equation*}
 \subparagraph{(b)}
-\begin{equation}
+\begin{equation*}
 P_{6,2}(5<X<7) = P\left(\frac{5 - 6}{2} < X < \frac{7 - 6}{2}\right) = \Phi\left( \frac{1}{2}\right) - \Phi\left(- \frac{1}{2}\right) = 2\cdot\Phi\left( \frac{1}{2}\right) - 1 = 0.383
-\end{equation}
+\end{equation*}
 \subparagraph{(c)}
 \begin{align*}
 P_{6,2}(|X-6| \geq 4) &= 1 - P_{6,2}(|X-6| < 4) = 1 - P_{6,2}(-4 < X-6 <4) \\
