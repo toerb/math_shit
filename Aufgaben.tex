@@ -39,7 +39,7 @@ Wege über k:
 \end{equation*}
 \subsection{}
 
-In einer Urne liegen vier Kugeln, die mit den Ziffern eins bis vier nummeriert sind. Nacheinander werden 10 Kugeln mit zurücklegen gezogen, die Ziffern notiert und der Größe nach geordnet. Wie viele 10-Tupel dieser Art gibt es?
+In einem Arne liegen vier Kugeln, die mit den Ziffern eins bis vier nummeriert sind. Nacheinander werden 10 Kugeln mit zurücklegen gezogen, die Ziffern notiert und der Größe nach geordnet. Wie viele 10-Tupel dieser Art gibt es?
 \paragraph{Lösung:}
 $k=10, n=4$
 \begin{equation*}
@@ -112,13 +112,13 @@ Mit welcher Wahrscheinlichkeit erhält man bei dreimaligem Würfeln mit einem sy
 
 \subsection{}
 
-In einer Urne befinden sich zehn gleichartige Kugeln. Die Kugeln sind nummeriert. Mit einem Griff werden drei Kugeln gezogen. Mit welcher Wahrscheinlichkeit gehört die Kugel mit der Nummer sieben dazu.
+In einem Arne befinden sich zehn gleichartige Kugeln. Die Kugeln sind nummeriert. Mit einem Griff werden drei Kugeln gezogen. Mit welcher Wahrscheinlichkeit gehört die Kugel mit der Nummer sieben dazu.
 \paragraph{Lösung:}
 \[ 1- \frac{9}{10} * \frac{8}{9} * \frac{7}{8} = 1-\frac{7}{10} =\frac{3}{10} \]
 
 \subsection{}
 
-Neun Kugeln werden zufällig und unabhängig von einander auf drei Urnen verteilt. Wie groß ist die Wahrscheinlichkeit dafür, dass sich in jeder Urne drei Kugeln befinden?
+Neun Kugeln werden zufällig und unabhängig von einander auf drei Arne verteilt. Wie groß ist die Wahrscheinlichkeit dafür, dass sich in jedem Arne drei Kugeln befinden?
 \paragraph{Lösung:}
 \[ \frac{\dbinom{9}{3,3,3}}{3^9} = 0,085 \]
 
@@ -405,8 +405,8 @@ Bei der Herstellung von bestimmten Bauteilen beträgt der Auschussanteil 3 \%. W
 \paragraph{Lösung:}
 $X$ ist die Anzahl brauchbarer Elemente. $X$ ist Binomialverteilt ($n,p$). $p=0.97$. $P(X>1200) = 0.99$
 \begin{align*}
-E(X) &= np = 0.97n\\
-V(X) &= np(1-p) = 0.97\cdot 0.03\cdot n = \\
+\mu \approx E(X) &= np = 0.97n\\
+s^2 \approx V(X) &= np(1-p) = 0.97\cdot 0.03\cdot n = 0.0291\cdot n\\
 \text{Normalisieren: } &P\left(\frac{X- 0.97n}{0.17\sqrt{n}} > \frac{1200 - 0.97n}{0.17\sqrt{n}}\right)=0.99\\
 &\approx 1 - \Phi\left(\frac{1200-0.97n}{0.17\sqrt{n}}\right) \rightarrow \Phi\left(\frac{1200-0.97n}{0.17\sqrt{n}}\right) = 0.01\\
 \rightarrow \Phi^{-1}\left(\Phi\left(\frac{1200-0.97n}{0.17\sqrt{n}}\right)\right) &= \Phi^{-1}(0.01)\rightarrow \frac{1200 - 0.97n}{0.17\sqrt{n}} = c_{0.01} \approx -2.326\\
