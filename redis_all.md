@@ -78,7 +78,9 @@ Redis is now trying to compensate a need for a mutual exclusion in the program a
     INCR x
 
 Because of Redis being singlethreaded no lost update can take place.
+
 <br>
+
 Well-known users
 ---
 Various companies and websites use Redis as database because of its high performance and scalability.
